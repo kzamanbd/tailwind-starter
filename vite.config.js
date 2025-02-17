@@ -10,10 +10,10 @@ const entries = glob.sync('./pages/**/*.html').reduce((acc, path) => {
 entries['main'] = resolve(__dirname, 'index.html');
 
 export default defineConfig({
+    plugins: [],
     optimizeDeps: {
         entries: Object.keys(entries),
     },
-    plugins: [],
     build: {
         target: 'esnext',
         chunkSizeWarningLimit: 1000, // 1000KiB
