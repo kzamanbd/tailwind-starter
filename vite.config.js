@@ -7,15 +7,20 @@ const entries = glob.sync('./pages/**/*.html').reduce((acc, path) => {
     acc[name] = path;
     return acc;
 }, {});
-entries['main'] = resolve(__dirname, 'index.html');
 
 export default defineConfig({
+    plugins: [],
     optimizeDeps: {
         entries: Object.keys(entries),
     },
-    plugins: [],
     build: {
         target: 'esnext',
+        rollupOptions: {
+            input: {
+                ...entries,
+                main: resolve(__dirname, 'index.html'),
+            },
+        },
         chunkSizeWarningLimit: 1000, // 1000KiB
     },
     server: {
