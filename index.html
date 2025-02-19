@@ -9,76 +9,320 @@
     </head>
 
     <body>
-        <div class="flex h-screen flex-col items-center justify-center bg-gray-100 p-2 dark:bg-white/10">
-            <div class="rounded-xl bg-white p-10 text-sm/7 text-gray-700 dark:bg-gray-950 dark:text-gray-300">
-                <img
-                    src="https://play.tailwindcss.com/img/logo.svg"
-                    class="mb-11.5 h-6 dark:hidden"
-                    alt="Tailwind Play" />
-                <img
-                    src="https://play.tailwindcss.com/img/logo-dark.svg"
-                    class="mb-11.5 h-6 not-dark:hidden"
-                    alt="Tailwind Play" />
-                <div class="space-y-6">
-                    <p>An advanced online playground for Tailwind CSS, including support for things like:</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <svg class="size-5.5 shrink-0" fill="none" stroke-linecap="square">
-                                <circle cx="11" cy="11" r="11" class="fill-sky-400/25" />
-                                <circle cx="11" cy="11" r="10.5" class="stroke-sky-400/25" />
-                                <path d="M8 11.5L10.5 14L14 8" class="stroke-sky-800 dark:stroke-sky-300" />
-                            </svg>
-                            <p class="ml-3">
-                                Customizing your theme with
-                                <code class="font-mono font-medium text-gray-950 dark:text-white">@theme</code>
-                            </p>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="size-5.5 shrink-0" fill="none" stroke-linecap="square">
-                                <circle cx="11" cy="11" r="11" class="fill-sky-400/25" />
-                                <circle cx="11" cy="11" r="10.5" class="stroke-sky-400/25" />
-                                <path d="M8 11.5L10.5 14L14 8" class="stroke-sky-800 dark:stroke-sky-300" />
-                            </svg>
-                            <p class="ml-3">
-                                Adding custom utilities with
-                                <code class="font-mono font-medium text-gray-950 dark:text-white">@utility</code>
-                            </p>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="size-5.5 shrink-0" fill="none" stroke-linecap="square">
-                                <circle cx="11" cy="11" r="11" class="fill-sky-400/25" />
-                                <circle cx="11" cy="11" r="10.5" class="stroke-sky-400/25" />
-                                <path d="M8 11.5L10.5 14L14 8" class="stroke-sky-800 dark:stroke-sky-300" />
-                            </svg>
-                            <p class="ml-3">
-                                Adding custom variants with
-                                <code class="font-mono font-medium text-gray-950 dark:text-white">@variant</code>
-                            </p>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="size-5.5 shrink-0" fill="none" stroke-linecap="square">
-                                <circle cx="11" cy="11" r="11" class="fill-sky-400/25" />
-                                <circle cx="11" cy="11" r="10.5" class="stroke-sky-400/25" />
-                                <path d="M8 11.5L10.5 14L14 8" class="stroke-sky-800 dark:stroke-sky-300" />
-                            </svg>
-                            <p class="ml-3">Code completion with instant preview</p>
-                        </li>
-                    </ul>
-                    <p>
-                        Perfect for learning how the framework works, prototyping a new idea, or creating a demo to
-                        share online.
-                    </p>
-                </div>
-                <hr class="my-6 w-full border-(--pattern-fg)" />
-                <p class="mb-3">Want to dig deeper into Tailwind?</p>
-                <p class="font-semibold">
-                    <a
-                        href="https://tailwindcss.com/docs"
-                        class="text-gray-950 underline decoration-sky-400 underline-offset-3 hover:decoration-2 dark:text-white">
-                        Read the docs &rarr;
+        <div class="flex min-h-screen flex-col items-center justify-between gap-6 bg-gray-100 dark:bg-white/10">
+            <!-- Header -->
+            <header class="flex h-24 w-full items-center bg-white">
+                <nav class="mx-auto flex w-full max-w-screen-xl flex-wrap items-center justify-between">
+                    <a href="/" class="flex items-center">
+                        <svg viewBox="0 0 162 24" fill="none" class="h-6 text-black dark:text-white">
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M16.668 2c-4.445 0-7.223 2.222-8.334 6.667 1.667-2.222 3.611-3.055 5.833-2.5 1.268.317 2.175 1.236 3.178 2.255C18.979 10.081 20.87 12 25 12c4.445 0 7.223-2.222 8.334-6.666-1.666 2.222-3.61 3.055-5.833 2.5-1.269-.318-2.175-1.237-3.178-2.255C22.69 3.919 20.8 2 16.668 2zM8.334 12C3.889 12 1.11 14.222 0 18.667c1.667-2.222 3.612-3.056 5.833-2.5 1.269.316 2.175 1.236 3.178 2.255C10.645 20.081 12.536 22 16.668 22c4.444 0 7.222-2.222 8.333-6.666-1.667 2.222-3.611 3.055-5.833 2.5-1.268-.317-2.175-1.238-3.177-2.255C14.356 13.92 12.463 12 8.334 12z"
+                                class="fill-purple-400"></path>
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M50 10.427h-2.908v5.63c0 1.501.985 1.477 2.909 1.383v2.276c-3.895.47-5.443-.61-5.443-3.66v-5.63H42.4V7.988h2.158v-3.15l2.534-.751v3.901H50v2.44zm11.088-2.44h2.533v11.729h-2.533v-1.689c-.892 1.243-2.276 1.994-4.105 1.994-3.19 0-5.841-2.698-5.841-6.17 0-3.494 2.65-6.169 5.84-6.169 1.83 0 3.215.75 4.106 1.97V7.988zm-3.706 9.618c2.111 0 3.706-1.572 3.706-3.754s-1.595-3.753-3.706-3.753c-2.111 0-3.706 1.572-3.706 3.753 0 2.182 1.595 3.754 3.706 3.754zM67.844 6.228c-.891 0-1.618-.75-1.618-1.619.002-.43.173-.842.476-1.145a1.612 1.612 0 012.283 0c.304.303.475.715.477 1.145 0 .868-.727 1.619-1.618 1.619zm-1.267 13.488V7.987h2.534v11.729h-2.534zm5.466 0V2.59h2.533v17.124h-2.533zM91.021 7.987h2.674l-3.683 11.729h-2.487l-2.44-7.905-2.463 7.905h-2.486L76.453 7.987h2.674l2.276 8.092 2.463-8.092h2.416l2.44 8.092 2.299-8.092zm5.817-1.759c-.892 0-1.619-.75-1.619-1.619.003-.43.174-.842.477-1.145a1.612 1.612 0 012.284 0c.303.303.475.715.477 1.145 0 .868-.727 1.619-1.619 1.619zm-1.266 13.488V7.987h2.533v11.729H95.57zm11.634-12.034c2.628 0 4.504 1.783 4.504 4.833v7.2h-2.533v-6.943c0-1.783-1.032-2.72-2.627-2.72-1.666 0-2.979.985-2.979 3.377v6.287h-2.534V7.987h2.534V9.49c.774-1.22 2.04-1.807 3.635-1.807zm16.515-4.386h2.533v16.42h-2.533v-1.69c-.891 1.244-2.275 1.994-4.105 1.994-3.19 0-5.841-2.697-5.841-6.17 0-3.494 2.651-6.168 5.841-6.168 1.83 0 3.214.75 4.105 1.97V3.296zm-3.707 14.309c2.112 0 3.707-1.572 3.707-3.754s-1.595-3.753-3.707-3.753c-2.111 0-3.706 1.572-3.706 3.753 0 2.182 1.595 3.754 3.706 3.754zm14.732 2.416c-3.542 0-6.193-2.698-6.193-6.17 0-3.494 2.651-6.169 6.193-6.169 2.299 0 4.293 1.196 5.231 3.026l-2.182 1.267c-.516-1.102-1.665-1.806-3.072-1.806-2.065 0-3.636 1.572-3.636 3.682 0 2.111 1.571 3.683 3.636 3.683 1.407 0 2.556-.727 3.119-1.806l2.182 1.243c-.985 1.853-2.979 3.05-5.278 3.05zm9.453-8.797c0 2.135 6.311.844 6.311 5.185 0 2.346-2.041 3.612-4.574 3.612-2.346 0-4.035-1.056-4.786-2.745l2.182-1.266c.375 1.055 1.313 1.689 2.604 1.689 1.126 0 1.993-.376 1.993-1.315 0-2.087-6.31-.914-6.31-5.113 0-2.205 1.9-3.589 4.293-3.589 1.924 0 3.519.892 4.34 2.44l-2.135 1.196c-.422-.915-1.243-1.337-2.205-1.337-.915 0-1.713.399-1.713 1.243zm10.815 0c0 2.135 6.31.844 6.31 5.185 0 2.346-2.041 3.612-4.575 3.612-2.345 0-4.034-1.056-4.785-2.745l2.182-1.266c.375 1.055 1.313 1.689 2.603 1.689 1.126 0 1.995-.376 1.995-1.315 0-2.087-6.31-.914-6.31-5.113 0-2.205 1.899-3.589 4.292-3.589 1.924 0 3.519.892 4.34 2.44l-2.135 1.196c-.422-.915-1.243-1.337-2.205-1.337-.915 0-1.712.399-1.712 1.243z"
+                                fill="currentColor"></path>
+                        </svg>
                     </a>
-                </p>
+                    <div class="flex items-center lg:order-2">
+                        <a
+                            href="#"
+                            class="mr-2 rounded-lg px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 focus:outline-none lg:px-5 lg:py-2.5 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                            Log in
+                        </a>
+                        <a
+                            href="#"
+                            class="mr-2 rounded-lg bg-purple-700 px-4 py-2 text-sm font-medium text-white hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 focus:outline-none lg:px-5 lg:py-2.5 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+                            Get started
+                        </a>
+                        <button
+                            data-collapse-toggle="mobile-menu-2"
+                            type="button"
+                            class="ml-1 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 focus:outline-none lg:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            aria-controls="mobile-menu-2"
+                            aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg
+                                class="h-6 w-6"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <svg
+                                class="hidden h-6 w-6"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div
+                        class="hidden w-full items-center justify-between lg:order-1 lg:flex lg:w-auto"
+                        id="mobile-menu-2">
+                        <ul class="mt-4 flex flex-col font-medium lg:mt-0 lg:flex-row lg:space-x-8">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="block rounded bg-purple-700 py-2 pr-4 pl-3 text-white lg:bg-transparent lg:p-0 lg:text-purple-700 dark:text-white"
+                                    aria-current="page">
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="block border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-purple-700 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent lg:dark:hover:text-white">
+                                    Company
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="block border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-purple-700 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent lg:dark:hover:text-white">
+                                    Marketplace
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="block border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-purple-700 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent lg:dark:hover:text-white">
+                                    Features
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="block border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-purple-700 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent lg:dark:hover:text-white">
+                                    Team
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="block border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-purple-700 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent lg:dark:hover:text-white">
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- Main section -->
+            <div class="w-full flex-1">
+                <div class="mx-auto w-full max-w-screen-xl gap-6 md:flex">
+                    <!-- Left Sidebar -->
+                    <div class="bg-gray-300 md:w-[20%]">Left Sidebar</div>
+                    <!-- Main -->
+                    <div class="bg-gray-300 md:w-[60%]">Main</div>
+                    <!-- Right Sidebar -->
+                    <div class="bg-gray-300 md:w-[20%]">Right Sidebar</div>
+                </div>
             </div>
+            <!-- Footer -->
+            <footer class="mt-auto flex min-h-[120px] w-full items-center justify-center bg-gray-900">
+                <div class="mx-auto w-full max-w-screen-xl py-10 lg:pt-20">
+                    <!-- Grid -->
+                    <div class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-5">
+                        <div class="col-span-full lg:col-span-1">
+                            <a
+                                class="flex-none text-xl font-semibold text-white focus:opacity-80 focus:outline-none"
+                                href="#"
+                                aria-label="Brand">
+                                Brand
+                            </a>
+                        </div>
+                        <!-- End Col -->
+
+                        <div class="col-span-1">
+                            <h4 class="font-semibold text-gray-100">Product</h4>
+
+                            <div class="mt-3 grid space-y-3">
+                                <p>
+                                    <a
+                                        class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:text-gray-200 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
+                                        href="#">
+                                        Pricing
+                                    </a>
+                                </p>
+                                <p>
+                                    <a
+                                        class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:text-gray-200 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
+                                        href="#">
+                                        Changelog
+                                    </a>
+                                </p>
+                                <p>
+                                    <a
+                                        class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:text-gray-200 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
+                                        href="#">
+                                        Docs
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- End Col -->
+
+                        <div class="col-span-1">
+                            <h4 class="font-semibold text-gray-100">Company</h4>
+
+                            <div class="mt-3 grid space-y-3">
+                                <p>
+                                    <a
+                                        class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:text-gray-200 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
+                                        href="#">
+                                        About us
+                                    </a>
+                                </p>
+                                <p>
+                                    <a
+                                        class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:text-gray-200 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
+                                        href="#">
+                                        Blog
+                                    </a>
+                                </p>
+                                <p>
+                                    <a
+                                        class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:text-gray-200 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
+                                        href="#">
+                                        Careers
+                                    </a>
+                                    <span class="ms-1 inline-block rounded-lg bg-blue-700 px-2 py-1 text-xs text-white">
+                                        We're hiring</span
+                                    >
+                                </p>
+                                <p>
+                                    <a
+                                        class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:text-gray-200 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
+                                        href="#">
+                                        Customers
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- End Col -->
+
+                        <div class="col-span-2">
+                            <h4 class="font-semibold text-gray-100">Stay up to date</h4>
+
+                            <form>
+                                <div
+                                    class="mt-4 flex flex-col items-center gap-2 rounded-lg bg-white p-2 sm:flex-row sm:gap-3 dark:bg-neutral-900">
+                                    <div class="w-full">
+                                        <label for="hero-input" class="sr-only">Subscribe</label>
+                                        <input
+                                            type="text"
+                                            id="hero-input"
+                                            name="hero-input"
+                                            class="block w-full rounded-lg border-transparent px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-transparent dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                                            placeholder="Enter your email" />
+                                    </div>
+                                    <a
+                                        class="inline-flex w-full items-center justify-center gap-x-2 rounded-lg border border-transparent bg-blue-600 p-3 text-sm font-medium whitespace-nowrap text-white hover:bg-blue-700 focus:bg-blue-700 focus:outline-none disabled:pointer-events-none disabled:opacity-50 sm:w-auto"
+                                        href="#">
+                                        Subscribe
+                                    </a>
+                                </div>
+                                <p class="mt-3 text-sm text-gray-400">New UI kits or big discounts. Never spam.</p>
+                            </form>
+                        </div>
+                        <!-- End Col -->
+                    </div>
+                    <!-- End Grid -->
+
+                    <div class="mt-5 grid gap-y-2 sm:mt-12 sm:flex sm:items-center sm:justify-between sm:gap-y-0">
+                        <div class="flex items-center justify-between">
+                            <p class="text-sm text-gray-400 dark:text-neutral-400">© 2025 Preline Labs.</p>
+                        </div>
+                        <!-- End Col -->
+
+                        <!-- Social Brands -->
+                        <div>
+                            <a
+                                class="inline-flex size-10 items-center justify-center gap-x-2 rounded-lg border border-transparent text-sm font-semibold text-white hover:bg-white/10 focus:bg-white/10 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                                href="#">
+                                <svg
+                                    class="size-4 shrink-0"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                                </svg>
+                            </a>
+                            <a
+                                class="inline-flex size-10 items-center justify-center gap-x-2 rounded-lg border border-transparent text-sm font-semibold text-white hover:bg-white/10 focus:bg-white/10 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                                href="#">
+                                <svg
+                                    class="size-4 shrink-0"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
+                                </svg>
+                            </a>
+                            <a
+                                class="inline-flex size-10 items-center justify-center gap-x-2 rounded-lg border border-transparent text-sm font-semibold text-white hover:bg-white/10 focus:bg-white/10 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                                href="#">
+                                <svg
+                                    class="size-4 shrink-0"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                                </svg>
+                            </a>
+                            <a
+                                class="inline-flex size-10 items-center justify-center gap-x-2 rounded-lg border border-transparent text-sm font-semibold text-white hover:bg-white/10 focus:bg-white/10 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                                href="#">
+                                <svg
+                                    class="size-4 shrink-0"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                                </svg>
+                            </a>
+                            <a
+                                class="inline-flex size-10 items-center justify-center gap-x-2 rounded-lg border border-transparent text-sm font-semibold text-white hover:bg-white/10 focus:bg-white/10 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                                href="#">
+                                <svg
+                                    class="size-4 shrink-0"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.362 10.11c0 .926-.756 1.681-1.681 1.681S0 11.036 0 10.111C0 9.186.756 8.43 1.68 8.43h1.682v1.68zm.846 0c0-.924.756-1.68 1.681-1.68s1.681.756 1.681 1.68v4.21c0 .924-.756 1.68-1.68 1.68a1.685 1.685 0 0 1-1.682-1.68v-4.21zM5.89 3.362c-.926 0-1.682-.756-1.682-1.681S4.964 0 5.89 0s1.68.756 1.68 1.68v1.682H5.89zm0 .846c.924 0 1.68.756 1.68 1.681S6.814 7.57 5.89 7.57H1.68C.757 7.57 0 6.814 0 5.89c0-.926.756-1.682 1.68-1.682h4.21zm6.749 1.682c0-.926.755-1.682 1.68-1.682.925 0 1.681.756 1.681 1.681s-.756 1.681-1.68 1.681h-1.681V5.89zm-.848 0c0 .924-.755 1.68-1.68 1.68A1.685 1.685 0 0 1 8.43 5.89V1.68C8.43.757 9.186 0 10.11 0c.926 0 1.681.756 1.681 1.68v4.21zm-1.681 6.748c.926 0 1.682.756 1.682 1.681S11.036 16 10.11 16s-1.681-.756-1.681-1.68v-1.682h1.68zm0-.847c-.924 0-1.68-.755-1.68-1.68 0-.925.756-1.681 1.68-1.681h4.21c.924 0 1.68.756 1.68 1.68 0 .926-.756 1.681-1.68 1.681h-4.21z" />
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- End Social Brands -->
+                    </div>
+                </div>
+            </footer>
         </div>
     </body>
 </html>
