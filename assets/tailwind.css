@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -26,8 +25,15 @@
     ::file-selector-button {
         border-color: var(--color-gray-200, currentColor);
     }
+    button:not(:disabled),
+    [role='button']:not(:disabled) {
+        cursor: pointer;
+    }
 }
 
 button {
     @apply text-primary;
 }
+
+/* Defaults hover styles on all devices */
+@custom-variant hover (&:hover);
